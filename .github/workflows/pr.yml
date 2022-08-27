@@ -1,0 +1,19 @@
+name: PullRequest
+on: [pull_request]
+jobs: 
+  PullRequest:
+    runs-on: ubuntu-latest
+    steps: 
+      - name: Check out repository code 
+        uses: actions/checkout@v3
+      - name: Make envfile
+        uses: SpicyPizza/create-envfile@v1
+				#precisamos criar um .env file por que o nosso está no gitignore
+        with:
+          POSTGRES_USER: "postgres"
+          POSTGRES_PASSWORD: "senha123"
+          POSTGRES_DB: "sing-me-a-song_test"
+          DATABASE_URL: "postgres://postgres:senha123@db_singmeasong:5432/sing-me-a-song_test"
+          file_name: .env.test
+      - name: Run tests
+        run: docker-compose -f docker-compose-test.yml run node_sing_me_a_song npm run test
