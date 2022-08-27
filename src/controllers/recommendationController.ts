@@ -59,6 +59,10 @@ async function deleteAll(req: Request, res: Response) {
   res.sendStatus(201);
 }
 
+async function deployTest(req: Request, res: Response) {
+  res.send("hello deploy");
+}
+
 export const recommendationController = {
   insert,
   upvote,
@@ -67,5 +71,6 @@ export const recommendationController = {
   getTop,
   get,
   getById,
-  deleteAll
+  deleteAll,
+  deployTest
 };
