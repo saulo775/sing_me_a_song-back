@@ -8,7 +8,12 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
-app.use("/recommendations", recommendationRouter);
+app.use("/recommendations", (req, res) => {
+    return res.send("hello deploy")
+});
+
+//app.use("/recommendations", recommendationRouter);
+
 app.use(errorHandlerMiddleware);
 
 export default app;
