@@ -9,7 +9,7 @@ app.use(cors());
 app.use(express.json());
 
 app.use("/recommendations", (req, res) => {
-    return res.send("hello deploy")
+    return res.send("hello deploy ALTEREI AQUI")
 });
 
 //app.use("/recommendations", recommendationRouter);
