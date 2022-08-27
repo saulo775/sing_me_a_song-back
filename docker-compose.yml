@@ -1,0 +1,24 @@
+services:
+  db_singmeasong: 
+    image: postgres
+    container_name: db_singmeasong
+    restart: always
+    ports:
+      - 1234:5432
+    env_file:
+      - .env
+    volumes:
+      - pg:/var/lib/postgresql/data
+
+  node_sing_me_a_song:
+    container_name: node_sing_me_a_song
+    build: .
+    ports: 
+      - 5300:5300
+    depends_on: 
+      - db_singmeasong
+    env_file: 
+      - .env
+
+volumes:
+  pg:
