@@ -60,7 +60,7 @@ async function deleteAll(req: Request, res: Response) {
 }
 
 async function deployTest(req: Request, res: Response) {
-  res.send("hello deploy");
+  res.status(201).send("hello deploy");
 }
 
 export const recommendationController = {
