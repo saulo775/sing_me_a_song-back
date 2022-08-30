@@ -18,7 +18,7 @@
     "build": "tsc",
     "prisma:migrate": "npx prisma migrate deploy",
     "prisma-seed": "prisma db seed",
-    "start": "npm run prisma:migrate && node dist/src/server.js && npm run prisma-seed"
+    "start": "npx prisma generate && npm run prisma:migrate && node dist/src/server.js && npm run prisma-seed"
   },
   "prisma": {
     "seed": "ts-node prisma/seed.ts"
