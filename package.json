@@ -5,8 +5,8 @@
   "description": "",
   "main": "index.js",
   "engines": {
-    "node": "18.18.0",
-    "npm": "8.18.0"
+    "node": "16.15.0",
+    "npm": "8.5.5"
   },
   "scripts": {
     "prisma": "prisma migrate dev",
