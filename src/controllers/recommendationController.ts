@@ -11,7 +11,7 @@ async function insert(req: Request, res: Response) {
 
   await recommendationService.insert(req.body);
 
-  res.sendStatus(201);
+  return res.sendStatus(201);
 }
 
 async function upvote(req: Request, res: Response) {
